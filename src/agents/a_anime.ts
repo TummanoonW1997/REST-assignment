@@ -18,7 +18,7 @@ class AnimeAgent extends DBAgent{
 
     async createAnime(newAni: Anime): Promise<Result>{
         if(newAni.name && newAni.studioId && newAni.year)return await super.createDoc(newAni);
-        else return { code: 400, data: "invalid name, studioId or maybe year" };
+        else return { code: 400, data: "invalid name, studioId or year" };
     }
 
     async deleteAnime(id: string): Promise<Result>{

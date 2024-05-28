@@ -17,7 +17,7 @@ class ChapterAgent extends DBAgent{
 
     async createChapter(newChapt: Chapter): Promise<Result>{
         if(newChapt.name && newChapt.studioId && newChapt.animeId && newChapt.duration) return await super.createDoc(newChapt);
-        else return { code: 400, data: "invalid name, studioId, animeId, or maybe duration" };
+        else return { code: 400, data: "invalid name, studioId, animeId, or duration" };
     }
 
     async deleteChapter(id: string): Promise<Result>{
