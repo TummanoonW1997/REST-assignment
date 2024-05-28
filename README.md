@@ -30,3 +30,10 @@ npm run start
 1. ใช้โปรแกรม POSTMan แล้วทำการ import ไฟล์ [api-template.postman_collection.json](api-template.postman_collection.json)
 
 
+## โครงสร้างการจัดเก็บโค้ดใน directory [src](src/)
+1. [agents](src/agents/) : เก็บ module ต่างๆที่เป็น logic และ operation 
+2. [models](src/models/) : เก็บโครงสร้างข้อมูลที่เกี่ยวข้องกับโปรเจค
+3. [routes](src/routes/) : เก็บ module ต่างๆที่เป็น router
+4. [index.ts](src/index.ts) : ไฟล์ตัวรัน application
+
+
