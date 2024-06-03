@@ -21,22 +21,16 @@ export class DBAgent {
 
     async getAllDocs(): Promise<Result> {
         const snapshot = await this.db.ref(this.refPath).get();
-        if (snapshot.exists()) {
-            return { code: 200, data: snapshot.val() };
-        } else {
-            return { code: 200, data: {} };
-        }
+        if (snapshot.exists())return { code: 200, data: snapshot.val() };
+        else return { code: 200, data: {} };
     }
 
     async getDocSingle(id: string): Promise<Result> {
         if (ID.isID(id)) {
             const snapshot = await this.db.ref(this.refPath + "/" + id).get();
-            if (snapshot.exists()) { //SUCCESS --> code 200
-                return { code: 200, data: snapshot.val() };
-            } else { //DOC NOT EXISTED --> code 404
-                return { code: 404 };
-            }
-        } else { //INVALID ID --> code 400
+            if (snapshot.exists()) return { code: 200, data: snapshot.val()};
+            else return { code: 404 };
+        } else {
             return { code: 400, data: 'invalid ID' };
         }
     }
